@@ -51,6 +51,7 @@ export default function Home() {
             aria-hidden
             src="/bellzstudio.png"
             alt="Bellz"
+            className="rounded-full"
             width={24}
             height={24}
           />
