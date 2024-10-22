@@ -9,8 +9,8 @@ interface TelegramWebApp {
     [key: string]: any; // Include other properties as necessary
   }
   
-  interface Window {
-    Telegram: {
-      WebApp: TelegramWebApp;
-    };
-  }
+interface Window {
+  Telegram: {
+    WebApp: TelegramWebApp;
+  };
+}

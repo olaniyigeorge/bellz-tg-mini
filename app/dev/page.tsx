@@ -27,7 +27,7 @@ const DevPage = () => {
   const handleClose = () => {
     
     // Ensure the Telegram Web App SDK is loaded
-    if (window && window.Telegram && window.Telegram.WebApp) {
+    if (typeof window !== "undefined"&& window.Telegram && window.Telegram.WebApp) {
       console.log(window.Telegram.WebApp.initData)
       window.Telegram.WebApp.close();
     }
