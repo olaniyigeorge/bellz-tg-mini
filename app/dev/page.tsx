@@ -14,17 +14,23 @@ interface TelegramUser {
 
 const DevPage = () => {
   const [user, setUser] = useState<TelegramUser | null>(null);
-  console.log(window.Telegram.WebApp.initData)
+  
   useEffect(() => {
     // Ensure the Telegram Web App SDK is loaded
-    if (window.Telegram && window.Telegram.WebApp) {
+    if (window && window.Telegram && window.Telegram.WebApp) {
+      console.log(window.Telegram.WebApp.initDataUnsafe)
       const userData = window.Telegram.WebApp.initDataUnsafe.user;
       setUser(userData);
     }
   }, []);
 
   const handleClose = () => {
-    window.Telegram.WebApp.close();
+    
+    // Ensure the Telegram Web App SDK is loaded
+    if (window && window.Telegram && window.Telegram.WebApp) {
+      console.log(window.Telegram.WebApp.initData)
+      window.Telegram.WebApp.close();
+    }
   };
 
   return (
