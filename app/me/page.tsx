@@ -14,10 +14,7 @@ interface BotInfo{
     can_connect_to_business: boolean;
     has_main_web_app: boolean;
   }
-type BotResponse = {
-    id: number;
-    result: BotInfo
-  };;
+
 
 export default function Home() {
   const [me, setMe] = useState<BotInfo | null>(null);
