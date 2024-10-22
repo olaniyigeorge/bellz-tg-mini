@@ -22,6 +22,7 @@ const DevPage = () => {
     //   const userData = window.Telegram.WebApp.initDataUnsafe.user;
     //   setUser(userData);
     // }
+    setUser(null)
   }, []);
 
   if (typeof window !== "undefined" && window.Telegram && window.Telegram.WebApp) {
