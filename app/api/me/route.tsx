@@ -1,9 +1,9 @@
 const TELEGRAM_BOT_TOKEN = process.env.BOT_APIKEY;
-const MINI_APP_ID = process.env.MINI_APP_ID;
+// const MINI_APP_ID = process.env.MINI_APP_ID;
 
 export async function GET(req: Request) {
   try {
-
+    console.log(req)
     const response = await fetch(
       `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getMe`,
       {
