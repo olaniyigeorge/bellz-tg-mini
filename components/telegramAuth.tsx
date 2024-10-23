@@ -22,6 +22,7 @@ export default function TelegramAuth() {
         const WebApp = (await import('@twa-dev/sdk')).default
         WebApp.ready()
         const initData = WebApp.initData
+        console.log("InitData: ", initData)
         if (initData) {
             try {
                 const response = await fetch('/api/auth', {
