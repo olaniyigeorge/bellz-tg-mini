@@ -11,7 +11,7 @@ export default function Home() {
         </h1>
         <ol className="text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
-            Sign up to the <Link className="text-purple-600 font-medium" href="/wait-list">wait list on LockedIn.</Link>
+            Sign up to the <Link className="text-purple-600 font-medium" href="/home">wait list on LockedIn.</Link>
           </li>
           <li>Read about our vision with BellzStudios.</li>
         </ol>
