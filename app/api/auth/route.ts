@@ -6,6 +6,7 @@ const SESSION_DURATION = 60 * 60 * 1000 // 1 hour
 
 export async function POST(request: Request) {
   const { initData } = await request.json()
+  console.log("in api auth", initData)
 
   const validationResult = validateTelegramWebAppData(initData)
 
