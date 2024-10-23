@@ -19,16 +19,20 @@ interface UserInfo{
 export default function Home() {
   const router = useRouter()
   const [me, setMe] = useState<UserInfo | null>(null);
+  const [ini, setIni] = useState<string>("");
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   
   useEffect(() => {
     if(WebApp.initDataUnsafe.user) {
       setMe(WebApp.initDataUnsafe.user as UserInfo)
+      setIni(WebApp.initData)
+      console.log("InitDataUnsafeUser: ", me)
+      console.log("InitData: ", ini)
     }
   }, [])
 
   const authenticateUser = async () => {
-    const initData = WebApp.initData
+    const initData = ini
     console.log("InitData: ", initData)
     if (initData) {
         try {
