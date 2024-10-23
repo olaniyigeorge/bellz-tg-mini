@@ -1,6 +1,8 @@
 "use client"
 import {useEffect, useState } from 'react';
 import WebApp from '@twa-dev/sdk';
+import TelegramAuth from '@/components/telegramAuth';
+import { getSession } from '@/utils/session';
 
 interface UserInfo{
     id: number;
@@ -17,7 +19,8 @@ interface UserInfo{
 
 export default function Home() {
   const [me, setMe] = useState<UserInfo | null>(null);
-
+  const session = getSession()
+  
   useEffect(() => {
     if(WebApp.initDataUnsafe.user) {
       setMe(WebApp.initDataUnsafe.user as UserInfo)
@@ -60,6 +63,8 @@ export default function Home() {
           <>can_join_groups: {me.can_join_groups}</> 
           </span>
 
+          <pre>{JSON.stringify(session, null, 2)}</pre>
+          <TelegramAuth />
         </div>
         : 
         <>loading....</>
