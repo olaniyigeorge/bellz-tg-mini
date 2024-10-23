@@ -42,21 +42,22 @@ export default function Home() {
     <div className="w-full mx-auto h-screen flex flex-col justify-center gap-3 items-center">
       {
         me ?
-        <div className=''> 
-          <span className=''>
-            {me.id}
+        <div className='flex flex-col gap-2'> 
+          <h1 className="text-2xl font-bold"> User Data</h1>
+          <span className='flex gap1 w-full'>
+          <>ID: {me.id} </>           
           </span> 
-          <span className=''>
-            {me.first_name}
+          <span className='flex gap1 w-full'>
+          <>FIRST_NAME: {me.first_name}</>            
           </span>
-          <span className=''>
-            {me.username}
+          <span className='flex gap1 w-full'>
+          <>USER_NAME: {me.username}</>            
           </span>
-          <span className=''>
-          can_connect_to_business: {me.can_connect_to_business}
+          <span className='flex gap1 w-full'>
+          <>can_connect_to_business: {me.can_connect_to_business}</> 
           </span>
-          <span className=''>
-          can_join_groups: {me.can_join_groups}
+          <span className='flex gap1 w-full'>
+          <>can_join_groups: {me.can_join_groups}</> 
           </span>
 
         </div>
