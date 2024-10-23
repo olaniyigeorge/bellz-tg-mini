@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const WaitList = () => {
+export default function WaitList() {
 
     async function signUp() {
         // Call endpoint to sign up
