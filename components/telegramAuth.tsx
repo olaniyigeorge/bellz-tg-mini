@@ -44,6 +44,8 @@ export default function TelegramAuth() {
                 console.error('Error during authentication:', error)
                 setIsAuthenticated(false)
             }
+        } else {
+            console.log("InitData not avaliable...")
         }
     }
 

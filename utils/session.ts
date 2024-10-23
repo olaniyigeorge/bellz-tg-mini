@@ -24,7 +24,7 @@ export async function decrypt(input: string): Promise<any> {
 
 export async function getSession() {
     const session = cookies().get("session")?.value
-    console.log("Session value in getSession ", session)
+    console.log("Session value in getSession: ", session)
     if (!session) return null
     return await decrypt(session)
 }
