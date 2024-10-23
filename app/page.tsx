@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -8,7 +9,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold">
           Bellz Mini App
         </h1>
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+        <ol className="text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Sign up to the wait list on LockedIn.
           </li>
@@ -17,7 +18,7 @@ export default function Home() {
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            className="rounded-full border border-solid border-transparent transition-colors dark:bg-purple-600 flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-purple-700 text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
             href="https://lockedin-api.onrender.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -31,28 +32,19 @@ export default function Home() {
             />
             LockedIn API
           </a>
-          <a
+          <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://bellzstudios.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/me"
           >
-            BellzStudios
-          </a>
-          <a
-            className="rounded-full border black_btn "
-            href="https://bellzstudios.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            BellzStudios
-          </a>
+            Home
+          </Link>
+
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://lockedin-api.onrender.com"
+          href="https://bellzstudios.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
         >

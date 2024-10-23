@@ -1,9 +1,8 @@
 "use client"
-import { useState } from 'react';
+import {useEffect, useState } from 'react';
+import WebApp from '@twa-dev/sdk';
 
-
-
-interface BotInfo{
+interface UserInfo{
     id: number;
     is_bot: boolean;
     first_name: string;
@@ -17,39 +16,52 @@ interface BotInfo{
 
 
 export default function Home() {
-  const [me, setMe] = useState<BotInfo | null>(null);
+  const [me, setMe] = useState<UserInfo | null>(null);
 
-  const getMe = async () => {
+  useEffect(() => {
+    if(WebApp.initDataUnsafe.user) {
+      setMe(WebApp.initDataUnsafe.user as UserInfo)
+    }
+  }, [])
+  // const getMe = async () => {
 
-    const res = await fetch('/api/me', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    console.log(res)
-    const data = await res.json();
-    setMe(data.result);
-    // console.log(data)
-    console.log(data.result)
-  };
+  //   const res = await fetch('/api/me', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  //   console.log(res)
+  //   const data = await res.json();
+  //   setMe(data.result);
+  //   // console.log(data)
+  //   console.log(data.result)
+  // };
 
   return (
     <div className="w-full mx-auto h-screen flex flex-col justify-center gap-3 items-center">
-      <button 
-        onClick={getMe}
-        className="border p-2 hover:bg-slate-800 rounded-lg"
-        >
-            Get Me
-        </button>
-
       {
         me ?
-        <p>
-            Update Me: {me.first_name}
-        </p>
+        <div className=''> 
+          <span className=''>
+            {me.id}
+          </span> 
+          <span className=''>
+            {me.first_name}
+          </span>
+          <span className=''>
+            {me.username}
+          </span>
+          <span className=''>
+          can_connect_to_business: {me.can_connect_to_business}
+          </span>
+          <span className=''>
+          can_join_groups: {me.can_join_groups}
+          </span>
+
+        </div>
         : 
-        <>Me: {me}</>
+        <>loading....</>
         
         }
     </div>
