@@ -1,7 +1,6 @@
 "use client"
 import {useEffect, useState } from 'react';
 import WebApp from '@twa-dev/sdk';
-import TelegramAuth from '@/components/telegramAuth';
 import { getSession } from '@/utils/session';
 
 interface UserInfo{
