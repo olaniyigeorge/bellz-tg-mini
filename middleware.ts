@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 import { getSession, updateSession } from './utils/session'
 
 export async function middleware(request: NextRequest) {
-  if (request.nextUrl.pathname.startsWith('/protected')) {
+  if (request.nextUrl.pathname.startsWith('/wait-list')) {
     const session = await getSession()
     console.log("Session: ", session)
 
