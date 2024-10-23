@@ -28,8 +28,6 @@ export default function Home() {
   }, [])
 
   const authenticateUser = async () => {
-    const WebApp = (await import('@twa-dev/sdk')).default
-    WebApp.ready()
     const initData = WebApp.initData
     console.log("InitData: ", initData)
     if (initData) {
@@ -65,7 +63,11 @@ export default function Home() {
       {
         me ?
         <div className='flex flex-col gap-2'> 
-          <h1 className="text-2xl font-bold"> User Data</h1>
+          <span className="flex gap-2 justify-between items-center">
+            <h1 className="text-2xl font-bold"> User Data</h1>
+            <span className={`h-4 w-4 animate-pulse ${isAuthenticated ? "bg-green-green" : "bg-red-500"}`}>
+          </span>
+          </span>
           <span className='flex gap1 w-full'>
           <>ID: {me.id} </>           
           </span> 
