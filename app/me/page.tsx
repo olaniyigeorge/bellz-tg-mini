@@ -62,12 +62,12 @@ export default function Home() {
           <span className='flex gap1 w-full'>
           <>can_join_groups: {me.can_join_groups}</> 
           </span>
-
-          <pre>{JSON.stringify(session, null, 2)}</pre>
-          <TelegramAuth />
         </div>
         : 
+        <>
         <>loading....</>
+        <pre>{JSON.stringify(session, null, 2)}</pre>
+        </>
         
         }
     </div>
