@@ -8,7 +8,7 @@ export const WaitList = () => {
   return (
     <div className="flex justify-center items-center p-3 flex-col gap-3">
         <h1 className='w-full justify-center items-start '>
-            Auth'd route
+            Auth&apos;d route
         </h1>
         <input 
             type="email" 
