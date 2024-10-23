@@ -35,6 +35,7 @@ export default function TelegramAuth() {
 
                 if (response.ok) {
                     setIsAuthenticated(true)
+                    console.log("IsAuthenticated: ", isAuthenticated)
                     router.refresh()
                 } else {
                     console.error('Authentication failed')
