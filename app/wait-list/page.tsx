@@ -1,4 +1,7 @@
 "use client"
+
+import Link from "next/link"
+
 export default function WaitList() {
 
     async function signUp() {
@@ -9,6 +12,7 @@ export default function WaitList() {
         <h1 className='w-full justify-center items-start '>
             Auth&apos;d route
         </h1>
+        <Link href="/home"> Home </Link>
         <input 
             type="email" 
             required
