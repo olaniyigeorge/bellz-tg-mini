@@ -1,4 +1,4 @@
-const TELEGRAM_BOT_TOKEN = process.env.BOT_APIKEY;
+const TELEGRAM_BOT_TOKEN = process.env.BOT_TOKEN;
 const BOT_ID = process.env.BOT_ID;
 
 export async function POST(req: Request) {

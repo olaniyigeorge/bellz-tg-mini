@@ -1,4 +1,4 @@
-const TELEGRAM_BOT_TOKEN = process.env.BOT_APIKEY;
+const TELEGRAM_BOT_TOKEN = process.env.BOT_TOKEN
 // const MINI_APP_ID = process.env.MINI_APP_ID;
 
 export async function GET() {
