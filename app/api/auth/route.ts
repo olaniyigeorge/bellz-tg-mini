@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server'
 import { validateTelegramWebAppData } from '@/utils/telegramAuth'
 import { cookies } from 'next/headers'
-import { encrypt, SESSION_DURATION } from '@/utils/session'
+import { encrypt, } from '@/utils/session'
+const SESSION_DURATION = 60 * 60 * 1000 // 1 hour
 
 export async function POST(request: Request) {
   const { initData } = await request.json()
